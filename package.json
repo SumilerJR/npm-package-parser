@@ -1,5 +1,5 @@
 {
-  "name": "npm-packager",
+  "name": "npm-package-parser",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
