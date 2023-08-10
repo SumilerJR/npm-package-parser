@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="main" style="width: 98vw;height:98vh;"></div>
+    <script src="https://cdn.bootcdn.net/ajax/libs/echarts/5.4.2/echarts.js"></script>
+    <script type="module">
+
+        fetch('./result.json')
+            .then(response => response.json())
+            .then(jsonData => {
+                // 在这里可以访问和使用 jsonData 中的数据
+                console.log(jsonData);
+
+                function convertDependencies(dependencies) {
+                    return dependencies.map(dependency => ({
+                        "name": dependency.name,
+                        "value": dependency.version, // 使用版本号作为示例值
+                        "children": convertDependencies(dependency.dependencies)
+                    }));
+                }
+
+                const outputObject = {
+                    "name": "npm_package_parser",
+                    "children": convertDependencies(jsonData.dependencies)
+                };
+
+                console.log(outputObject);
+
+                let data = outputObject;
+
+
+                var chartDom = document.getElementById('main');
+                var myChart = echarts.init(chartDom);
+                var option;
+
+                myChart.showLoading();
+
+                myChart.hideLoading();
+                data.children.forEach(function (datum, index) {
+                    index % 2 === 0 && (datum.collapsed = true);
+                });
+                myChart.setOption(
+                    (option = {
+                        tooltip: {
+                            trigger: 'item',
+                            triggerOn: 'mousemove'
+                        },
+                        series: [
+                            {
+                                type: 'tree',
+                                data: [data],
+                                top: '1%',
+                                left: '7%',
+                                bottom: '1%',
+                                right: '20%',
+                                symbolSize: 10,
+                                label: {
+                                    position: 'left',
+                                    verticalAlign: 'middle',
+                                    align: 'right',
+                                    fontSize: 14
+                                },
+                                leaves: {
+                                    label: {
+                                        position: 'right',
+                                        verticalAlign: 'middle',
+                                        align: 'left'
+                                    }
+                                },
+                                emphasis: {
+                                    focus: 'descendant'
+                                },
+                                expandAndCollapse: true,
+                                animationDuration: 550,
+                                animationDurationUpdate: 750
+                            }
+                        ]
+                    })
+                );
+
+
+            })
+            .catch(error => {
+                console.error('Error fetching JSON file:', error);
+            });
+
+
+
+
+
+    </script>
+</body>
+
+</html>

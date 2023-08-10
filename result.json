@@ -1,0 +1,147 @@
+{
+    "name": "root",
+    "version": "1.1.1",
+    "dependencies": [
+        {
+            "name": "echarts",
+            "version": "^5.4.3",
+            "dependencies": [
+                {
+                    "name": "tslib",
+                    "version": "2.3.0",
+                    "dependencies": []
+                },
+                {
+                    "name": "zrender",
+                    "version": "5.4.4",
+                    "dependencies": []
+                }
+            ]
+        },
+        {
+            "name": "glob",
+            "version": "^10.3.3",
+            "dependencies": [
+                {
+                    "name": "foreground-child",
+                    "version": "^3.1.0",
+                    "dependencies": [
+                        {
+                            "name": "cross-spawn",
+                            "version": "^7.0.0",
+                            "dependencies": [
+                                {
+                                    "name": "path-key",
+                                    "version": "^3.1.0",
+                                    "dependencies": []
+                                },
+                                {
+                                    "name": "shebang-command",
+                                    "version": "^2.0.0",
+                                    "dependencies": [
+                                        {
+                                            "name": "shebang-regex",
+                                            "version": "^3.0.0",
+                                            "dependencies": []
+                                        }
+                                    ]
+                                },
+                                {
+                                    "name": "which",
+                                    "version": "^2.0.1",
+                                    "dependencies": [
+                                        {
+                                            "name": "isexe",
+                                            "version": "^2.0.0",
+                                            "dependencies": []
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "name": "signal-exit",
+                            "version": "^4.0.1",
+                            "dependencies": []
+                        }
+                    ]
+                },
+                {
+                    "name": "jackspeak",
+                    "version": "^2.0.3",
+                    "dependencies": [
+                        {
+                            "name": "@isaacs/cliui",
+                            "version": "^8.0.2",
+                            "dependencies": []
+                        }
+                    ]
+                },
+                {
+                    "name": "minimatch",
+                    "version": "^9.0.1",
+                    "dependencies": [
+                        {
+                            "name": "brace-expansion",
+                            "version": "^2.0.1",
+                            "dependencies": [
+                                {
+                                    "name": "balanced-match",
+                                    "version": "^1.0.0",
+                                    "dependencies": []
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "minipass",
+                    "version": "^5.0.0 || ^6.0.2 || ^7.0.0",
+                    "dependencies": []
+                },
+                {
+                    "name": "path-scurry",
+                    "version": "^1.10.1",
+                    "dependencies": [
+                        {
+                            "name": "lru-cache",
+                            "version": "^9.1.1 || ^10.0.0",
+                            "dependencies": []
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "vue",
+            "version": "^3.3.4",
+            "dependencies": [
+                {
+                    "name": "@vue/shared",
+                    "version": "3.3.4",
+                    "dependencies": []
+                },
+                {
+                    "name": "@vue/compiler-dom",
+                    "version": "3.3.4",
+                    "dependencies": []
+                },
+                {
+                    "name": "@vue/runtime-dom",
+                    "version": "3.3.4",
+                    "dependencies": []
+                },
+                {
+                    "name": "@vue/compiler-sfc",
+                    "version": "3.3.4",
+                    "dependencies": []
+                },
+                {
+                    "name": "@vue/server-renderer",
+                    "version": "3.3.4",
+                    "dependencies": []
+                }
+            ]
+        }
+    ]
+}

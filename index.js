@@ -2,7 +2,7 @@
  * @Author: 九日 mail@sumiler.com
  * @Date: 2023-08-09 20:05:19
  * @LastEditors: 九日 mail@sumiler.com
- * @LastEditTime: 2023-08-10 10:17:26
+ * @LastEditTime: 2023-08-10 11:17:45
  * @FilePath: \NPM Package\index.js
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -30,7 +30,7 @@ class PackageNode {
 
 
 // 获取当前包的package.json数据
-const package = require('./package.json');
+const packageJSON = require('./package.json');
 
 const result = {};
 
@@ -73,6 +73,14 @@ function getPackageJSONByName(packageName) {
     }
 }
 
-const root = parsePackageJSON(package, new PackageNode('root', '1.1.1'));
+const root = parsePackageJSON(packageJSON, new PackageNode('root', '1.1.1'));
 console.log("root", JSON.stringify(root));
 console.log("result", result);
+
+function init() {
+    const root = parsePackageJSON(packageJSON, new PackageNode('root', '1.1.1'));
+    return root;
+}
+
+
+// export { init };
