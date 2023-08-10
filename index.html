@@ -114,47 +114,35 @@
                         edgeLabel: {
                             fontSize: 20
                         },
-                        data: [{
-                            name: "某IT男",
-                            draggable: true,                // 节点是否可拖拽，只在使用力引导布局的时候有用。
-                            symbolSize: [100, 100],         // 关系图节点标记的大小，可以设置成诸如 10 这样单一的数字，也可以用数组分开表示宽和高，例如 [20, 10] 表示标记宽为20，高为10。
-                            itemStyle: {
-                                // color: '#000'				// 关系图节点标记的颜色
-                            },
-                            category: "收入支出分析"         // 数据项所在类目的 index。
-                        }, {
-                            name: "工资\n6000",
-                            draggable: true,
-                            symbolSize: [80, 80],
-                            itemStyle: {
-                                // color: '#0000ff'
-                            },
-                            category: "收入+"
-                        }, {
-                            name: "租房\n600",
-                            draggable: true,
-                            symbolSize: [80, 80],
-                            itemStyle: {
-                                // color: '#ff0000'
-                            },
-                            category: "支出-"
-                        }, {
-                            name: "生活开销\n1400",
-                            draggable: true,
-                            symbolSize: [80, 80],
-                            itemStyle: {
-                                // color: '#ff0000'
-                            },
-                            category: "支出-"
-                        }, {
-                            name: "储蓄\n4000",
-                            draggable: true,
-                            symbolSize: [80, 80],
-                            itemStyle: {
-                                // color: '#00ff00'
-                            },
-                            category: "剩余="
-                        }],
+                        data: [
+                            // { symbolSize: [80, 80], name: 'npm-package-parser', draggable: true },
+                            { symbolSize: [80, 80], name: 'echarts', draggable: true },
+                            { symbolSize: [80, 80], name: 'tslib', draggable: true },
+                            { symbolSize: [80, 80], name: 'zrender', draggable: true },
+                            { symbolSize: [80, 80], name: 'glob', draggable: true },
+                            { symbolSize: [80, 80], name: 'foreground-child', draggable: true },
+                            { symbolSize: [80, 80], name: 'cross-spawn', draggable: true },
+                            { symbolSize: [80, 80], name: 'path-key', draggable: true },
+                            { symbolSize: [80, 80], name: 'shebang-command', draggable: true },
+                            { symbolSize: [80, 80], name: 'shebang-regex', draggable: true },
+                            { symbolSize: [80, 80], name: 'which', draggable: true },
+                            { symbolSize: [80, 80], name: 'isexe', draggable: true },
+                            { symbolSize: [80, 80], name: 'signal-exit', draggable: true },
+                            { symbolSize: [80, 80], name: 'jackspeak', draggable: true },
+                            { symbolSize: [80, 80], name: '@isaacs/cliui', draggable: true },
+                            { symbolSize: [80, 80], name: 'minimatch', draggable: true },
+                            { symbolSize: [80, 80], name: 'brace-expansion', draggable: true },
+                            { symbolSize: [80, 80], name: 'balanced-match', draggable: true },
+                            { symbolSize: [80, 80], name: 'minipass', draggable: true },
+                            { symbolSize: [80, 80], name: 'path-scurry', draggable: true },
+                            { symbolSize: [80, 80], name: 'lru-cache', draggable: true },
+                            { symbolSize: [80, 80], name: 'vue', draggable: true },
+                            { symbolSize: [80, 80], name: '@vue/shared', draggable: true },
+                            { symbolSize: [80, 80], name: '@vue/compiler-dom', draggable: true },
+                            { symbolSize: [80, 80], name: '@vue/runtime-dom', draggable: true },
+                            { symbolSize: [80, 80], name: '@vue/compiler-sfc', draggable: true },
+                            { symbolSize: [80, 80], name: '@vue/server-renderer', draggable: true }
+                        ],
                         categories: [{              // 节点分类的类目，可选。如果节点有分类的话可以通过 data[i].category 指定每个节点的类目，类目的样式会被应用到节点样式上。图例也可以基于categories名字展现和筛选。
                             name: "收入支出分析"            // 类目名称，用于和 legend 对应以及格式化 tooltip 的内容。
                         }, {
@@ -166,23 +154,64 @@
                         }, {
                             name: "剩余="
                         }],
-                        links: [{                   // 节点间的关系数据
-                            target: "工资\n6000",
-                            source: "某IT男",
-                            category: "收入+"              // 关系对象连接线上的标签内容
-                        }, {
-                            target: "租房\n600",
-                            source: "某IT男",
-                            category: "支出-"
-                        }, {
-                            target: "生活开销\n1400",
-                            source: "某IT男",
-                            category: "支出-"
-                        }, {
-                            target: "储蓄\n4000",
-                            source: "某IT男",
-                            category: "剩余="
-                        }]
+                        links: [
+                            // {
+                            //     target: 'echarts',
+                            //     source: 'npm-package-parser',
+                            //     category: '版本信息'
+                            // },
+                            // { target: 'glob', source: 'npm-package-parser', category: '版本信息' },
+                            // { target: 'vue', source: 'npm-package-parser', category: '版本信息' },
+                            { target: 'tslib', source: 'echarts', category: '版本信息' },
+                            { target: 'zrender', source: 'echarts', category: '版本信息' },
+                            { target: 'tslib', source: 'zrender', category: '版本信息' },
+                            { target: 'foreground-child', source: 'glob', category: '版本信息' },
+                            { target: 'jackspeak', source: 'glob', category: '版本信息' },
+                            { target: 'minimatch', source: 'glob', category: '版本信息' },
+                            { target: 'minipass', source: 'glob', category: '版本信息' },
+                            { target: 'path-scurry', source: 'glob', category: '版本信息' },
+                            {
+                                target: 'cross-spawn',
+                                source: 'foreground-child',
+                                category: '版本信息'
+                            },
+                            {
+                                target: 'signal-exit',
+                                source: 'foreground-child',
+                                category: '版本信息'
+                            },
+                            { target: 'path-key', source: 'cross-spawn', category: '版本信息' },
+                            {
+                                target: 'shebang-command',
+                                source: 'cross-spawn',
+                                category: '版本信息'
+                            },
+                            { target: 'which', source: 'cross-spawn', category: '版本信息' },
+                            {
+                                target: 'shebang-regex',
+                                source: 'shebang-command',
+                                category: '版本信息'
+                            },
+                            { target: 'isexe', source: 'which', category: '版本信息' },
+                            { target: '@isaacs/cliui', source: 'jackspeak', category: '版本信息' },
+                            {
+                                target: 'brace-expansion',
+                                source: 'minimatch',
+                                category: '版本信息'
+                            },
+                            {
+                                target: 'balanced-match',
+                                source: 'brace-expansion',
+                                category: '版本信息'
+                            },
+                            { target: 'lru-cache', source: 'path-scurry', category: '版本信息' },
+                            { target: 'minipass', source: 'path-scurry', category: '版本信息' },
+                            { target: '@vue/shared', source: 'vue', category: '版本信息' },
+                            { target: '@vue/compiler-dom', source: 'vue', category: '版本信息' },
+                            { target: '@vue/runtime-dom', source: 'vue', category: '版本信息' },
+                            { target: '@vue/compiler-sfc', source: 'vue', category: '版本信息' },
+                            { target: '@vue/server-renderer', source: 'vue', category: '版本信息' }
+                        ]
                     }],
 
                     animationEasingUpdate: "quinticInOut",          // 数据更新动画的缓动效果。[ default: cubicOut ]    "quinticInOut"

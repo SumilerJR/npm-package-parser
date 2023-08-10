@@ -2,7 +2,7 @@
  * @Author: 九日 mail@sumiler.com
  * @Date: 2023-08-09 20:05:19
  * @LastEditors: 九日 mail@sumiler.com
- * @LastEditTime: 2023-08-10 17:10:41
+ * @LastEditTime: 2023-08-10 17:30:42
  * @FilePath: \NPM Package\index.js
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -125,6 +125,30 @@ class Graph {
         });
         return s;
     }
+
+    toJSON() {
+        const result = {
+            data: [],
+            links: []
+        };
+        this.vertices.forEach((v) => {
+            result.data.push({
+                name: v,
+                draggable: true,
+                symbolSize: [80, 80],
+            });
+            if (this.adjList.get(v).length > 0) {
+                this.adjList.get(v).forEach((n) => {
+                    result.links.push({
+                        target: n,
+                        source: v,
+                        category: "版本信息"
+                    });
+                });
+            }
+        });
+        return result;
+    }
 }
 
 const graph = new Graph();
@@ -187,6 +211,7 @@ const root = parsePackageJSON(packageJSON, new PackageNode('root', '1.1.1'));
 console.log("root", JSON.stringify(root));
 console.log("result", result);
 console.log("@@@@@@@@graph\n", graph.toString());
+console.log("@@@@@@@@toJSON\n", graph.toJSON());
 
 function init() {
     const root = parsePackageJSON(packageJSON, new PackageNode('root', '1.1.1'));
