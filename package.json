@@ -2,15 +2,23 @@
   "name": "npm-package-parser",
   "version": "1.0.0",
   "main": "index.js",
+  "type": "module",
   "scripts": {
+    "dev": "npx tsc",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
   "description": "",
+  "bin": {
+    "npp": "./bin/index.js"
+  },
   "dependencies": {
     "echarts": "^5.4.3",
     "glob": "^10.3.3",
     "vue": "^3.3.4"
+  },
+  "devDependencies": {
+    "typescript": "^5.2.2"
   }
 }
