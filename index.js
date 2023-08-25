@@ -142,7 +142,7 @@ class Graph {
                     result.links.push({
                         target: n,
                         source: v,
-                        category: "版本信息"
+                        // category: "版本信息"
                     });
                 });
             }
@@ -170,7 +170,7 @@ function parsePackageJSON(packageJSON, root) {
     console.log("packageJSON.dependencies", packageJSON.dependencies);
 
     // 添加当前节点到图中
-    graph.addVertex(packageJSON.name);
+    graph.addVertex(packageJSON.name + '\n' + packageJSON.version);
 
     const dependencies = packageJSON.dependencies;
 
