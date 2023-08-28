@@ -1,147 +1,434 @@
 {
-    "name": "root",
-    "version": "1.1.1",
-    "dependencies": [
+    "data": [
         {
-            "name": "echarts",
-            "version": "^5.4.3",
-            "dependencies": [
-                {
-                    "name": "tslib",
-                    "version": "2.3.0",
-                    "dependencies": []
-                },
-                {
-                    "name": "zrender",
-                    "version": "5.4.4",
-                    "dependencies": []
-                }
+            "name": "npm-package-parser\n1.0.0",
+            "version": "1.0.0",
+            "draggable": true,
+            "symbolSize": [
+                80,
+                80
             ]
         },
         {
-            "name": "glob",
-            "version": "^10.3.3",
-            "dependencies": [
-                {
-                    "name": "foreground-child",
-                    "version": "^3.1.0",
-                    "dependencies": [
-                        {
-                            "name": "cross-spawn",
-                            "version": "^7.0.0",
-                            "dependencies": [
-                                {
-                                    "name": "path-key",
-                                    "version": "^3.1.0",
-                                    "dependencies": []
-                                },
-                                {
-                                    "name": "shebang-command",
-                                    "version": "^2.0.0",
-                                    "dependencies": [
-                                        {
-                                            "name": "shebang-regex",
-                                            "version": "^3.0.0",
-                                            "dependencies": []
-                                        }
-                                    ]
-                                },
-                                {
-                                    "name": "which",
-                                    "version": "^2.0.1",
-                                    "dependencies": [
-                                        {
-                                            "name": "isexe",
-                                            "version": "^2.0.0",
-                                            "dependencies": []
-                                        }
-                                    ]
-                                }
-                            ]
-                        },
-                        {
-                            "name": "signal-exit",
-                            "version": "^4.0.1",
-                            "dependencies": []
-                        }
-                    ]
-                },
-                {
-                    "name": "jackspeak",
-                    "version": "^2.0.3",
-                    "dependencies": [
-                        {
-                            "name": "@isaacs/cliui",
-                            "version": "^8.0.2",
-                            "dependencies": []
-                        }
-                    ]
-                },
-                {
-                    "name": "minimatch",
-                    "version": "^9.0.1",
-                    "dependencies": [
-                        {
-                            "name": "brace-expansion",
-                            "version": "^2.0.1",
-                            "dependencies": [
-                                {
-                                    "name": "balanced-match",
-                                    "version": "^1.0.0",
-                                    "dependencies": []
-                                }
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "name": "minipass",
-                    "version": "^5.0.0 || ^6.0.2 || ^7.0.0",
-                    "dependencies": []
-                },
-                {
-                    "name": "path-scurry",
-                    "version": "^1.10.1",
-                    "dependencies": [
-                        {
-                            "name": "lru-cache",
-                            "version": "^9.1.1 || ^10.0.0",
-                            "dependencies": []
-                        }
-                    ]
-                }
+            "name": "echarts\n5.4.3",
+            "version": "5.4.3",
+            "draggable": true,
+            "symbolSize": [
+                80,
+                80
             ]
         },
         {
-            "name": "vue",
-            "version": "^3.3.4",
-            "dependencies": [
-                {
-                    "name": "@vue/shared",
-                    "version": "3.3.4",
-                    "dependencies": []
-                },
-                {
-                    "name": "@vue/compiler-dom",
-                    "version": "3.3.4",
-                    "dependencies": []
-                },
-                {
-                    "name": "@vue/runtime-dom",
-                    "version": "3.3.4",
-                    "dependencies": []
-                },
-                {
-                    "name": "@vue/compiler-sfc",
-                    "version": "3.3.4",
-                    "dependencies": []
-                },
-                {
-                    "name": "@vue/server-renderer",
-                    "version": "3.3.4",
-                    "dependencies": []
-                }
+            "name": "tslib\n2.3.0",
+            "version": "2.3.0",
+            "draggable": true,
+            "symbolSize": [
+                80,
+                80
             ]
+        },
+        {
+            "name": "zrender\n5.4.4",
+            "version": "5.4.4",
+            "draggable": true,
+            "symbolSize": [
+                80,
+                80
+            ]
+        },
+        {
+            "name": "glob\n10.3.3",
+            "version": "10.3.3",
+            "draggable": true,
+            "symbolSize": [
+                80,
+                80
+            ]
+        },
+        {
+            "name": "foreground-child\n3.1.0",
+            "version": "3.1.0",
+            "draggable": true,
+            "symbolSize": [
+                80,
+                80
+            ]
+        },
+        {
+            "name": "foreground-child\n3.1.1",
+            "version": "3.1.1",
+            "draggable": true,
+            "symbolSize": [
+                80,
+                80
+            ]
+        },
+        {
+            "name": "cross-spawn\n7.0.0",
+            "version": "7.0.0",
+            "draggable": true,
+            "symbolSize": [
+                80,
+                80
+            ]
+        },
+        {
+            "name": "cross-spawn\n7.0.3",
+            "version": "7.0.3",
+            "draggable": true,
+            "symbolSize": [
+                80,
+                80
+            ]
+        },
+        {
+            "name": "path-key\n3.1.0",
+            "version": "3.1.0",
+            "draggable": true,
+            "symbolSize": [
+                80,
+                80
+            ]
+        },
+        {
+            "name": "shebang-command\n2.0.0",
+            "version": "2.0.0",
+            "draggable": true,
+            "symbolSize": [
+                80,
+                80
+            ]
+        },
+        {
+            "name": "shebang-regex\n3.0.0",
+            "version": "3.0.0",
+            "draggable": true,
+            "symbolSize": [
+                80,
+                80
+            ]
+        },
+        {
+            "name": "which\n2.0.1",
+            "version": "2.0.1",
+            "draggable": true,
+            "symbolSize": [
+                80,
+                80
+            ]
+        },
+        {
+            "name": "which\n2.0.2",
+            "version": "2.0.2",
+            "draggable": true,
+            "symbolSize": [
+                80,
+                80
+            ]
+        },
+        {
+            "name": "isexe\n2.0.0",
+            "version": "2.0.0",
+            "draggable": true,
+            "symbolSize": [
+                80,
+                80
+            ]
+        },
+        {
+            "name": "signal-exit\n4.0.1",
+            "version": "4.0.1",
+            "draggable": true,
+            "symbolSize": [
+                80,
+                80
+            ]
+        },
+        {
+            "name": "jackspeak\n2.0.3",
+            "version": "2.0.3",
+            "draggable": true,
+            "symbolSize": [
+                80,
+                80
+            ]
+        },
+        {
+            "name": "jackspeak\n2.2.2",
+            "version": "2.2.2",
+            "draggable": true,
+            "symbolSize": [
+                80,
+                80
+            ]
+        },
+        {
+            "name": "@isaacs/cliui\n8.0.2",
+            "version": "8.0.2",
+            "draggable": true,
+            "symbolSize": [
+                80,
+                80
+            ]
+        },
+        {
+            "name": "minimatch\n9.0.1",
+            "version": "9.0.1",
+            "draggable": true,
+            "symbolSize": [
+                80,
+                80
+            ]
+        },
+        {
+            "name": "minimatch\n9.0.3",
+            "version": "9.0.3",
+            "draggable": true,
+            "symbolSize": [
+                80,
+                80
+            ]
+        },
+        {
+            "name": "brace-expansion\n2.0.1",
+            "version": "2.0.1",
+            "draggable": true,
+            "symbolSize": [
+                80,
+                80
+            ]
+        },
+        {
+            "name": "balanced-match\n1.0.0",
+            "version": "1.0.0",
+            "draggable": true,
+            "symbolSize": [
+                80,
+                80
+            ]
+        },
+        {
+            "name": "minipass\n5.0.0 || ^6.0.2 || ^7.0.0",
+            "version": "5.0.0 || ^6.0.2 || ^7.0.0",
+            "draggable": true,
+            "symbolSize": [
+                80,
+                80
+            ]
+        },
+        {
+            "name": "path-scurry\n1.10.1",
+            "version": "1.10.1",
+            "draggable": true,
+            "symbolSize": [
+                80,
+                80
+            ]
+        },
+        {
+            "name": "lru-cache\n9.1.1 || ^10.0.0",
+            "version": "9.1.1 || ^10.0.0",
+            "draggable": true,
+            "symbolSize": [
+                80,
+                80
+            ]
+        },
+        {
+            "name": "vue\n3.3.4",
+            "version": "3.3.4",
+            "draggable": true,
+            "symbolSize": [
+                80,
+                80
+            ]
+        },
+        {
+            "name": "@vue/shared\n3.3.4",
+            "version": "3.3.4",
+            "draggable": true,
+            "symbolSize": [
+                80,
+                80
+            ]
+        },
+        {
+            "name": "@vue/compiler-dom\n3.3.4",
+            "version": "3.3.4",
+            "draggable": true,
+            "symbolSize": [
+                80,
+                80
+            ]
+        },
+        {
+            "name": "@vue/runtime-dom\n3.3.4",
+            "version": "3.3.4",
+            "draggable": true,
+            "symbolSize": [
+                80,
+                80
+            ]
+        },
+        {
+            "name": "@vue/compiler-sfc\n3.3.4",
+            "version": "3.3.4",
+            "draggable": true,
+            "symbolSize": [
+                80,
+                80
+            ]
+        },
+        {
+            "name": "@vue/server-renderer\n3.3.4",
+            "version": "3.3.4",
+            "draggable": true,
+            "symbolSize": [
+                80,
+                80
+            ]
+        }
+    ],
+    "links": [
+        {
+            "target": "echarts\n5.4.3",
+            "source": "npm-package-parser\n1.0.0",
+            "category": "1.0.0"
+        },
+        {
+            "target": "glob\n10.3.3",
+            "source": "npm-package-parser\n1.0.0",
+            "category": "1.0.0"
+        },
+        {
+            "target": "vue\n3.3.4",
+            "source": "npm-package-parser\n1.0.0",
+            "category": "1.0.0"
+        },
+        {
+            "target": "tslib\n2.3.0",
+            "source": "echarts\n5.4.3",
+            "category": "5.4.3"
+        },
+        {
+            "target": "zrender\n5.4.4",
+            "source": "echarts\n5.4.3",
+            "category": "5.4.3"
+        },
+        {
+            "target": "tslib\n2.3.0",
+            "source": "zrender\n5.4.4",
+            "category": "5.4.4"
+        },
+        {
+            "target": "foreground-child\n3.1.0",
+            "source": "glob\n10.3.3",
+            "category": "10.3.3"
+        },
+        {
+            "target": "jackspeak\n2.0.3",
+            "source": "glob\n10.3.3",
+            "category": "10.3.3"
+        },
+        {
+            "target": "minimatch\n9.0.1",
+            "source": "glob\n10.3.3",
+            "category": "10.3.3"
+        },
+        {
+            "target": "minipass\n5.0.0 || ^6.0.2 || ^7.0.0",
+            "source": "glob\n10.3.3",
+            "category": "10.3.3"
+        },
+        {
+            "target": "path-scurry\n1.10.1",
+            "source": "glob\n10.3.3",
+            "category": "10.3.3"
+        },
+        {
+            "target": "cross-spawn\n7.0.0",
+            "source": "foreground-child\n3.1.1",
+            "category": "3.1.1"
+        },
+        {
+            "target": "signal-exit\n4.0.1",
+            "source": "foreground-child\n3.1.1",
+            "category": "3.1.1"
+        },
+        {
+            "target": "path-key\n3.1.0",
+            "source": "cross-spawn\n7.0.3",
+            "category": "7.0.3"
+        },
+        {
+            "target": "shebang-command\n2.0.0",
+            "source": "cross-spawn\n7.0.3",
+            "category": "7.0.3"
+        },
+        {
+            "target": "which\n2.0.1",
+            "source": "cross-spawn\n7.0.3",
+            "category": "7.0.3"
+        },
+        {
+            "target": "shebang-regex\n3.0.0",
+            "source": "shebang-command\n2.0.0",
+            "category": "2.0.0"
+        },
+        {
+            "target": "isexe\n2.0.0",
+            "source": "which\n2.0.2",
+            "category": "2.0.2"
+        },
+        {
+            "target": "@isaacs/cliui\n8.0.2",
+            "source": "jackspeak\n2.2.2",
+            "category": "2.2.2"
+        },
+        {
+            "target": "brace-expansion\n2.0.1",
+            "source": "minimatch\n9.0.3",
+            "category": "9.0.3"
+        },
+        {
+            "target": "balanced-match\n1.0.0",
+            "source": "brace-expansion\n2.0.1",
+            "category": "2.0.1"
+        },
+        {
+            "target": "lru-cache\n9.1.1 || ^10.0.0",
+            "source": "path-scurry\n1.10.1",
+            "category": "1.10.1"
+        },
+        {
+            "target": "minipass\n5.0.0 || ^6.0.2 || ^7.0.0",
+            "source": "path-scurry\n1.10.1",
+            "category": "1.10.1"
+        },
+        {
+            "target": "@vue/shared\n3.3.4",
+            "source": "vue\n3.3.4",
+            "category": "3.3.4"
+        },
+        {
+            "target": "@vue/compiler-dom\n3.3.4",
+            "source": "vue\n3.3.4",
+            "category": "3.3.4"
+        },
+        {
+            "target": "@vue/runtime-dom\n3.3.4",
+            "source": "vue\n3.3.4",
+            "category": "3.3.4"
+        },
+        {
+            "target": "@vue/compiler-sfc\n3.3.4",
+            "source": "vue\n3.3.4",
+            "category": "3.3.4"
+        },
+        {
+            "target": "@vue/server-renderer\n3.3.4",
+            "source": "vue\n3.3.4",
+            "category": "3.3.4"
         }
     ]
 }

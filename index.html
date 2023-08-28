@@ -19,22 +19,22 @@
                 // 在这里可以访问和使用 jsonData 中的数据
                 console.log(jsonData);
 
-                function convertDependencies(dependencies) {
-                    return dependencies.map(dependency => ({
-                        "name": dependency.name,
-                        "value": dependency.version, // 使用版本号作为示例值
-                        "children": convertDependencies(dependency.dependencies)
-                    }));
-                }
+                // function convertDependencies(dependencies) {
+                //     return dependencies.map(dependency => ({
+                //         "name": dependency.name,
+                //         "value": dependency.version, // 使用版本号作为示例值
+                //         "children": convertDependencies(dependency.dependencies)
+                //     }));
+                // }
 
-                const outputObject = {
-                    "name": "npm_package_parser",
-                    "children": convertDependencies(jsonData.dependencies)
-                };
+                // const outputObject = {
+                //     "name": "npm_package_parser",
+                //     "children": convertDependencies(jsonData.dependencies)
+                // };
 
-                console.log(outputObject);
+                // console.log(outputObject);
 
-                let data = outputObject;
+                // let data = outputObject;
 
 
                 // 基于准备好的容器(这里的容器是id为main的div)，初始化echarts实例
@@ -54,10 +54,10 @@
                     tooltip: {                  // 提示框的配置
                         formatter: function (param) {
                             if (param.dataType === 'edge') {
-                                //return param.data.category + ': ' + param.data.target;
+                                // return param.data.category + ': ' + param.data.category;
                                 return param.data.target;
                             }
-                            //return param.data.category + ': ' + param.data.name;
+                            // return param.data.category + ': ' + param.data.name;
                             return param.data.name;
                         }
                     },
@@ -114,35 +114,7 @@
                         edgeLabel: {
                             fontSize: 20
                         },
-                        data: [
-                            // { symbolSize: [80, 80], name: 'npm-package-parser', draggable: true },
-                            { symbolSize: [80, 80], name: 'echarts', draggable: true },
-                            { symbolSize: [80, 80], name: 'tslib', draggable: true },
-                            { symbolSize: [80, 80], name: 'zrender', draggable: true },
-                            { symbolSize: [80, 80], name: 'glob', draggable: true },
-                            { symbolSize: [80, 80], name: 'foreground-child', draggable: true },
-                            { symbolSize: [80, 80], name: 'cross-spawn', draggable: true },
-                            { symbolSize: [80, 80], name: 'path-key', draggable: true },
-                            { symbolSize: [80, 80], name: 'shebang-command', draggable: true },
-                            { symbolSize: [80, 80], name: 'shebang-regex', draggable: true },
-                            { symbolSize: [80, 80], name: 'which', draggable: true },
-                            { symbolSize: [80, 80], name: 'isexe', draggable: true },
-                            { symbolSize: [80, 80], name: 'signal-exit', draggable: true },
-                            { symbolSize: [80, 80], name: 'jackspeak', draggable: true },
-                            { symbolSize: [80, 80], name: '@isaacs/cliui', draggable: true },
-                            { symbolSize: [80, 80], name: 'minimatch', draggable: true },
-                            { symbolSize: [80, 80], name: 'brace-expansion', draggable: true },
-                            { symbolSize: [80, 80], name: 'balanced-match', draggable: true },
-                            { symbolSize: [80, 80], name: 'minipass', draggable: true },
-                            { symbolSize: [80, 80], name: 'path-scurry', draggable: true },
-                            { symbolSize: [80, 80], name: 'lru-cache', draggable: true },
-                            { symbolSize: [80, 80], name: 'vue', draggable: true },
-                            { symbolSize: [80, 80], name: '@vue/shared', draggable: true },
-                            { symbolSize: [80, 80], name: '@vue/compiler-dom', draggable: true },
-                            { symbolSize: [80, 80], name: '@vue/runtime-dom', draggable: true },
-                            { symbolSize: [80, 80], name: '@vue/compiler-sfc', draggable: true },
-                            { symbolSize: [80, 80], name: '@vue/server-renderer', draggable: true }
-                        ],
+                        data: jsonData.data,
                         categories: [{              // 节点分类的类目，可选。如果节点有分类的话可以通过 data[i].category 指定每个节点的类目，类目的样式会被应用到节点样式上。图例也可以基于categories名字展现和筛选。
                             name: "收入支出分析"            // 类目名称，用于和 legend 对应以及格式化 tooltip 的内容。
                         }, {
@@ -154,64 +126,7 @@
                         }, {
                             name: "剩余="
                         }],
-                        links: [
-                            // {
-                            //     target: 'echarts',
-                            //     source: 'npm-package-parser',
-                            //     category: '版本信息'
-                            // },
-                            // { target: 'glob', source: 'npm-package-parser', category: '版本信息' },
-                            // { target: 'vue', source: 'npm-package-parser', category: '版本信息' },
-                            { target: 'tslib', source: 'echarts', category: '版本信息' },
-                            { target: 'zrender', source: 'echarts', category: '版本信息' },
-                            { target: 'tslib', source: 'zrender', category: '版本信息' },
-                            { target: 'foreground-child', source: 'glob', category: '版本信息' },
-                            { target: 'jackspeak', source: 'glob', category: '版本信息' },
-                            { target: 'minimatch', source: 'glob', category: '版本信息' },
-                            { target: 'minipass', source: 'glob', category: '版本信息' },
-                            { target: 'path-scurry', source: 'glob', category: '版本信息' },
-                            {
-                                target: 'cross-spawn',
-                                source: 'foreground-child',
-                                category: '版本信息'
-                            },
-                            {
-                                target: 'signal-exit',
-                                source: 'foreground-child',
-                                category: '版本信息'
-                            },
-                            { target: 'path-key', source: 'cross-spawn', category: '版本信息' },
-                            {
-                                target: 'shebang-command',
-                                source: 'cross-spawn',
-                                category: '版本信息'
-                            },
-                            { target: 'which', source: 'cross-spawn', category: '版本信息' },
-                            {
-                                target: 'shebang-regex',
-                                source: 'shebang-command',
-                                category: '版本信息'
-                            },
-                            { target: 'isexe', source: 'which', category: '版本信息' },
-                            { target: '@isaacs/cliui', source: 'jackspeak', category: '版本信息' },
-                            {
-                                target: 'brace-expansion',
-                                source: 'minimatch',
-                                category: '版本信息'
-                            },
-                            {
-                                target: 'balanced-match',
-                                source: 'brace-expansion',
-                                category: '版本信息'
-                            },
-                            { target: 'lru-cache', source: 'path-scurry', category: '版本信息' },
-                            { target: 'minipass', source: 'path-scurry', category: '版本信息' },
-                            { target: '@vue/shared', source: 'vue', category: '版本信息' },
-                            { target: '@vue/compiler-dom', source: 'vue', category: '版本信息' },
-                            { target: '@vue/runtime-dom', source: 'vue', category: '版本信息' },
-                            { target: '@vue/compiler-sfc', source: 'vue', category: '版本信息' },
-                            { target: '@vue/server-renderer', source: 'vue', category: '版本信息' }
-                        ]
+                        links: jsonData.links,
                     }],
 
                     animationEasingUpdate: "quinticInOut",          // 数据更新动画的缓动效果。[ default: cubicOut ]    "quinticInOut"

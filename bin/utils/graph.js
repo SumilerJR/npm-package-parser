@@ -1,3 +1,11 @@
+/*
+ * @Author: 九日 mail@sumiler.com
+ * @Date: 2023-08-25 23:10:19
+ * @LastEditors: 九日 mail@sumiler.com
+ * @LastEditTime: 2023-08-26 14:09:04
+ * @FilePath: \NPM Package\bin\utils\graph.js
+ * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ */
 import Dictionary from "./dictionary.js";
 
 export default class Graph {
@@ -59,17 +67,23 @@ export default class Graph {
             links: []
         };
         this.vertices.forEach((v) => {
+            const [sourceName, sourceVersion] = v.split(':');
             result.data.push({
-                name: v,
+                name: sourceName + '\n' + sourceVersion,
+                version: sourceVersion,
                 draggable: true,
                 symbolSize: [80, 80],
             });
             if (this.adjList.get(v).length > 0) {
                 this.adjList.get(v).forEach((n) => {
+                    const [targetName, targetVersion] = n.split(':');
+                    console.log(targetName, targetVersion, sourceName, sourceVersion);
                     result.links.push({
-                        target: n,
-                        source: v,
-                        category: "版本信息"
+                        // target: n,
+                        // source: v,
+                        target: targetName + '\n' + targetVersion,
+                        source: sourceName + '\n' + sourceVersion,
+                        category: sourceVersion
                     });
                 });
             }
