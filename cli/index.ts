@@ -15,8 +15,8 @@ import fs from "fs";
 import path, { dirname, resolve } from "path";
 import { fileURLToPath } from 'url';
 
-import PackageNode from "./utils/packageNode.js";
-import Graph from "./utils/graph.js";
+import PackageNode from "./utils/packageNode";
+import Graph from "./utils/graph";
 
 const url = import.meta.url;
 
@@ -34,16 +34,16 @@ const packageJSON = getJSONFromFile(jsonFile);
 
 
 
-function getJSONFromFile(filePath) {
+function getJSONFromFile(filePath: string): any {
     const data = fs.readFileSync(filePath, { encoding: 'utf-8' });
     return JSON.parse(data);
 }
 
-function extractVersion(versionString) {
+function extractVersion(versionString: string) {
     return versionString.replace(/^[\^~><=]+/, "");
 }
 
-function parsePackageJSON(packageJSON, root) {
+function parsePackageJSON(packageJSON: any, root?: PackageNode) {
 
     if (!packageJSON || !packageJSON.dependencies) return;
 
@@ -62,15 +62,15 @@ function parsePackageJSON(packageJSON, root) {
         const nextPackageJSON = getPackageJSONByName(targetName);
         // console.log("nextPackageJSON", nextPackageJSON);
 
-        graph.addEdge(name + ':' + version, targetName + ':' + extractVersion(targetVersion));
+        graph.addEdge(name + ':' + version, targetName + ':' + extractVersion(targetVersion as string));
 
         parsePackageJSON(nextPackageJSON);
     }
-    // return root;
+    return root;
 }
 
 
-function getPackageJSONByName(packageName) {
+function getPackageJSONByName(packageName: string) {
     let files = fs.readdirSync(nodeModulesPath); // 该文件夹下的所有文件名称 (文件夹 + 文件)
 
     for (const file of files) {
@@ -88,11 +88,6 @@ parsePackageJSON(packageJSON, new PackageNode('npm-package-parser', '1.1.1'));
 // console.log("result", result);
 // console.log("@@@@@@@@graph\n", graph.toString());
 console.log("@@@@@@@@toJSON\n", JSON.stringify(graph.toJSON()));
-
-function init() {
-    const root = parsePackageJSON(packageJSON, new PackageNode('root', '1.1.1'));
-    return root;
-}
 
 
 // export { init };

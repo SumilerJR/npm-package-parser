@@ -1,0 +1,14 @@
+{
+    "compilerOptions": {
+        "target": "ESNext",
+        "module": "ESNext",
+        "lib": [
+            "ESNext",
+            "DOM"
+        ],
+        "outDir": "./bin",
+        "esModuleInterop": true,
+        "skipLibCheck": true
+    },
+    "include": ["cli"]
+}

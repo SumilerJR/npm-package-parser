@@ -6,12 +6,13 @@
  * @FilePath: \NPM Package\bin\utils\graph.js
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
-import Dictionary from "./dictionary.js";
+import Dictionary from "./dictionary";
 
 export default class Graph {
+    private vertices = [] // 用来存放图中的顶点
+    private adjList: Dictionary // 用来存放图中的边
     constructor() {
-        this.vertices = []; // 用来存放图中的顶点
-        this.adjList = new Dictionary(); // 用来存放图中的边
+        this.adjList = new Dictionary();
     }
 
     // 向图中添加一个新顶点

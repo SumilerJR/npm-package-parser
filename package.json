@@ -4,7 +4,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "dev": "npx tsc",
+    "dev": "tsc && npm link",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
@@ -19,6 +19,7 @@
     "vue": "^3.3.4"
   },
   "devDependencies": {
+    "@types/node": "^20.5.7",
     "typescript": "^5.2.2"
   }
 }

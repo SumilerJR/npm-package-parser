@@ -1,7 +1,5 @@
 export default class Dictionary {
-    constructor() {
-        this.items = {};
-    }
+    private items = {}
 
     set(key, value) { // 向字典中添加或修改元素
         this.items[key] = value;
