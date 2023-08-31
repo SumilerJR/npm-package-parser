@@ -19,24 +19,6 @@
                 // 在这里可以访问和使用 jsonData 中的数据
                 console.log(jsonData);
 
-                // function convertDependencies(dependencies) {
-                //     return dependencies.map(dependency => ({
-                //         "name": dependency.name,
-                //         "value": dependency.version, // 使用版本号作为示例值
-                //         "children": convertDependencies(dependency.dependencies)
-                //     }));
-                // }
-
-                // const outputObject = {
-                //     "name": "npm_package_parser",
-                //     "children": convertDependencies(jsonData.dependencies)
-                // };
-
-                // console.log(outputObject);
-
-                // let data = outputObject;
-
-
                 // 基于准备好的容器(这里的容器是id为main的div)，初始化echarts实例
                 var chart = echarts.init(document.getElementById("main"));
 

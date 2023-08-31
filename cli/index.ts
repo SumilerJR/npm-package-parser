@@ -5,7 +5,7 @@
  * @Author: 九日 mail@sumiler.com
  * @Date: 2023-08-09 20:05:19
  * @LastEditors: 九日 mail@sumiler.com
- * @LastEditTime: 2023-08-26 14:14:47
+ * @LastEditTime: 2023-08-31 15:25:00
  * @FilePath: \NPM Package\index.js
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -15,8 +15,8 @@ import fs from "fs";
 import path, { dirname, resolve } from "path";
 import { fileURLToPath } from 'url';
 
-import PackageNode from "./utils/packageNode";
-import Graph from "./utils/graph";
+import PackageNode from "./utils/packageNode.js";
+import Graph from "./utils/graph.js";
 
 const url = import.meta.url;
 
@@ -47,13 +47,11 @@ function parsePackageJSON(packageJSON: any, root?: PackageNode) {
 
     if (!packageJSON || !packageJSON.dependencies) return;
 
-    // console.log("packageJSON", packageJSON);
-    // console.log("packageJSON.dependencies", packageJSON.dependencies);
-
-    const { name, version, dependencies } = packageJSON;
+    const { name, version, dependencies, devDependencies } = packageJSON;
 
     // 添加当前节点到图中
-    graph.addVertex(name + ':' + extractVersion(version));
+    // graph.addVertex(name + ':' + extractVersion(version));
+    graph.addVertex(name);
 
     // const dependencies = packageJSON.dependencies;
 
@@ -62,10 +60,20 @@ function parsePackageJSON(packageJSON: any, root?: PackageNode) {
         const nextPackageJSON = getPackageJSONByName(targetName);
         // console.log("nextPackageJSON", nextPackageJSON);
 
-        graph.addEdge(name + ':' + version, targetName + ':' + extractVersion(targetVersion as string));
+        // graph.addEdge(name + ':' + version, targetName + ':' + extractVersion(targetVersion as string));
+        graph.addEdge(name, targetName);
 
         parsePackageJSON(nextPackageJSON);
     }
+
+    // if (!devDependencies) return;
+
+    // for (const [targetName, targetVersion] of Object.entries(devDependencies)) {
+    //     const nextPackageJSON = getPackageJSONByName(targetName);
+    //     graph.addEdge(name, targetName);
+    //     parsePackageJSON(nextPackageJSON);
+    // }
+
     return root;
 }
 
@@ -89,5 +97,14 @@ parsePackageJSON(packageJSON, new PackageNode('npm-package-parser', '1.1.1'));
 // console.log("@@@@@@@@graph\n", graph.toString());
 console.log("@@@@@@@@toJSON\n", JSON.stringify(graph.toJSON()));
 
+// 使用fs.writeFile 方法写入JSON文件
+import { writeFile } from 'fs';
 
-// export { init };
+writeFile(path.resolve(__dirname, "../dist/result.json"), JSON.stringify(graph.toJSON(), null, 2), (error) => {
+    if (error) {
+        console.log('An error has occurred ', error);
+        return;
+    }
+    console.log('Data written successfully to disk');
+});
+
