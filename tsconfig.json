@@ -1,7 +1,7 @@
 {
     "compilerOptions": {
-        "target": "ESNext",
-        "module": "ESNext",
+        // "target": "ESNext",
+        "module": "es2020",
         "lib": [
             "ESNext",
             "DOM"
@@ -10,5 +10,7 @@
         "esModuleInterop": true,
         "skipLibCheck": true
     },
-    "include": ["cli"]
+    "include": [
+        "cli"
+    ]
 }
