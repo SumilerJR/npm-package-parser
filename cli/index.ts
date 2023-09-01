@@ -5,7 +5,7 @@
  * @Author: 九日 mail@sumiler.com
  * @Date: 2023-08-09 20:05:19
  * @LastEditors: 九日 mail@sumiler.com
- * @LastEditTime: 2023-09-01 11:57:04
+ * @LastEditTime: 2023-09-01 12:07:57
  * @FilePath: \NPM Package\index.js
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -17,6 +17,11 @@ import { fileURLToPath } from 'url';
 
 import PackageNode from "./utils/packageNode.js";
 import Graph from "./utils/graph.js";
+
+// 使用fs.writeFile 方法写入JSON文件
+import { writeFile } from 'fs';
+// 导入web服务功能
+import startServer from "./server.js";
 
 const url = import.meta.url;
 
@@ -97,9 +102,8 @@ parsePackageJSON(packageJSON, new PackageNode('npm-package-parser', '1.1.1'));
 // console.log("@@@@@@@@graph\n", graph.toString());
 console.log("@@@@@@@@toJSON\n", JSON.stringify(graph.toJSON()));
 
-// 使用fs.writeFile 方法写入JSON文件
-import { writeFile } from 'fs';
 
+// 将结果输出到result.json
 writeFile(path.resolve(__dirname, "../dist/result.json"), JSON.stringify(graph.toJSON(), null, 2), (error) => {
     if (error) {
         console.log('An error has occurred ', error);
@@ -108,10 +112,7 @@ writeFile(path.resolve(__dirname, "../dist/result.json"), JSON.stringify(graph.t
     console.log('Data written successfully to disk');
 });
 
-
-import express from 'express';
-
-
+// 将html写入dist目录
 const templatePath = path.resolve(__dirname, '../index.html'); // 模板文件的路径
 const outputPath = path.resolve(__dirname, '../dist', 'index.html'); // 输出文件的路径
 
@@ -133,15 +134,3 @@ fs.readFile(templatePath, 'utf-8', (err, templateContent) => {
     }
 });
 
-function startServer() {
-    // 在此处添加启动 Web 服务器的代码，可以使用之前提到的 Express 示例代码
-    const app = express();
-    const port = 3000; // 选择一个可用的端口号
-    const staticDir = path.resolve(__dirname, '../dist'); // 替换为您希望公开的目录路径
-
-    app.use(express.static(staticDir));
-
-    app.listen(port, () => {
-        console.log(`Server running at http://localhost:${port}/`);
-    });
-}

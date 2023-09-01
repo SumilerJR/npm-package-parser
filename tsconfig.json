@@ -1,11 +1,17 @@
 {
     "compilerOptions": {
-        // "target": "ESNext",
-        "module": "es2020",
+        "module": "NodeNext",
+        "moduleResolution": "NodeNext",
+        "baseUrl": "./",
         "lib": [
             "ESNext",
             "DOM"
         ],
+        "paths": {
+            "open": [
+                "./node_modules/open"
+            ]
+        },
         "outDir": "./bin",
         "esModuleInterop": true,
         "skipLibCheck": true
